@@ -4,11 +4,13 @@
 
 // # Approach
 // <!-- Describe your approach to solving the problem. -->
-// -> To find the range we first compare if leftmost element is smaller or equal 
-// to the middle element or not. 
-// -> if smaller then find the range where the target element may lie either on the left side
-// of the middle element or the right.
-// -> else the leftmost element is bigger then again find the range i.e. either the target is in left or in right.
+// -> To find the range we first compare if leftmost element is smaller or equal to the middle element or not. 
+//   -> if smaller then compare if target is smaller than low and greater than mid because that is the only sorted range in this case then 
+//     the target lies in left range.
+//   -> else target element lies in right range.
+// -> else if the leftmost element is bigger then mid than compare
+//   -> if the target is greater then mid and lower then high because that is the only sorted range in this case.
+//   -> else the target lies in left range.
 
 // # Complexity
 // - Time complexity:
