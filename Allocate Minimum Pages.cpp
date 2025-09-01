@@ -26,9 +26,13 @@ class Solution {
         int student = 1;
         int sum = 0;
         for(int i = 0; i<n; i++){
+
+            // add to the sum if less than no
             if(sum + arr[i] <= no){
                 sum += arr[i];
             }
+
+            // else assign new number to sum from which the count of pages will start and increase student count 
             else{
                 student++;
                 sum = arr[i];
@@ -38,9 +42,13 @@ class Solution {
     }
     int findPages(vector<int> &arr, int k) {
         int n = arr.size();
+
+        //if number of books is less than k
         if(n<k){
             return -1;
         }
+
+        // find sum and maximum and set them low and high
         int sum = 0;
         int maxi = INT_MIN;
         for(int i = 0; i<n; i++){
@@ -49,8 +57,11 @@ class Solution {
         }
         int low = maxi;
         int high = sum;
+
         while(low<=high){
             int mid = (low+high)/2;
+            
+            // check for the number of students who can accomodate this number of pages
             int num = check(arr, n, mid);
             if(num > k){
                 low = mid+1;
