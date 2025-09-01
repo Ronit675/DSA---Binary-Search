@@ -1,3 +1,5 @@
+// Solve Allocate minimum Pages first then try this problem.
+// The Intuition and Approach of this question is same as the Allocate minimum Pages.
 
 class Solution {
   public:
