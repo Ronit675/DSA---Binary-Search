@@ -24,14 +24,18 @@ class Solution {
     bool can_we_place(vector<int> &stalls, int mid, int k){
         int n = stalls.size();
 
-        
+        // put the forst cow at first position
         int cnt = 1;
         int last = stalls[0];
         for(int i = 1; i<n; i++){
+          
+            //iterate and check if the last position - current satisfy the condition or not.
             if(stalls[i] - last >= mid){
                 last = stalls[i];
                 cnt++;
             }
+
+            //if all the cows are inserted then return true.
             if(cnt >= k){
                 return true;
             }
@@ -40,6 +44,8 @@ class Solution {
     }
     int aggressiveCows(vector<int> &stalls, int k) {
         int n = stalls.size();
+
+        // sort
         sort(stalls.begin(), stalls.end());
         int low = 0;
         int high = stalls[n-1] - stalls[0];
