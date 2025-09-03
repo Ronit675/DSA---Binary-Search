@@ -14,6 +14,7 @@
 // # Complexity
 // - Time complexity:
 // O(nlogn) + O(log2(arr[n-1] - arr[0]) * O(n))
+// Sorting of arrat + binarysearch * iterating through the array
 
 // - Space complexity:
 // O(1)
@@ -22,6 +23,8 @@ class Solution {
   public:
     bool can_we_place(vector<int> &stalls, int mid, int k){
         int n = stalls.size();
+
+        
         int cnt = 1;
         int last = stalls[0];
         for(int i = 1; i<n; i++){
